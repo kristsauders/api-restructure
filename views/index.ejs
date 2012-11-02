@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>API Information Restructure</title>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://fluidbyte.net/workshop/jqcollapse/jquery.easing.js"></script>
+<script type="text/javascript" src="http://fluidbyte.net/workshop/jqcollapse/jquery.collapse.js"></script>
+<script type="text/javascript">
+            
+            //This brings in the jquery collapsible menu plugin
+			$(function(){
+				
+				$('#collapser').jqcollapse({
+				   slide: true,
+				   speed: 100,
+				   easing: 'easeOutCubic'
+				});
+				
+			});
+			
+            // This loads a new screenshot when passed a URL
+            function load(p) {
+                document.getElementById('screenshot').src = p;
+            }
+</script>
+
+<!-- Some basic styling for the menu and list items -->
+<style type="text/css">
+        ul li {
+            background-color:white;
+            width:8em;
+        }
+        a {
+            text-align: center;
+            border: 2px solid black;
+            margin: 0.3em;
+            display: block;
+        }
+        a:link { color: black; text-decoration: none}
+        a:active { color: black; text-decoration: none}
+        a:visited { color: black; text-decoration: none}
+        .xml {
+            background-color:green;
+        }
+        .xml-suggested {
+            background-color:yellow;
+        }
+        .section-contains-xml {
+            background-color:LightGray;
+        }
+        .code-generated {
+            background-color:LightBlue;
+        }
+</style>
+</head>
+  
+<body>
+  <div id='container'> 
+    <div id='main'>
+            
+        <!-- This is the legend at the top -->
+        <b>Legend: </b> &nbsp;
+        <b style="font-size:0.8em;background-color:LightGray;border:2px solid black;padding:0.2em;">Section-Contains-XML-Driven-Pages</b> &nbsp;
+        <!-- <b style="font-size:0.8em;background-color:yellow;border:2px solid black;padding:0.2em;">Suggested-XML-Driven-Page</b> &nbsp; -->
+        <b style="font-size:0.8em;background-color:green;border:2px solid black;padding:0.2em;">Completely-XML-Driven-Pages</b> &nbsp;
+        <b style="font-size:0.8em;background-color:LightBlue;border:2px solid black;padding:0.2em;">SDK-Code-Generated-HTML</b> &nbsp;
+        <b style="font-size:0.8em;background-color:white;border:2px solid black;padding:0.2em;">Current-CE-Process</b> &nbsp;<br/>
+        
+        <br/><br/>
+        
+        <table width="100%">
+        <tr>
+        <td valign="top" width="30%">
+        
+        <!-- This is the main menu on the left -->
+        <h2 id='example'>APIs & Tools</h2>
+        
+        <ul id="collapser">
+          <li><a href='javascript:load("/images/APIs.png");'>APIs</a>
+              <ul>
+                  <li><a href='#'>SMS</a></li>
+                  <li><a href='#'>MMS</a></li>
+                  <li><a href='#'>WAP Push</a></li>
+                  <li><a href='#'>Advertising</a></li>
+                  <li><a href='#'>Location</a></li>
+                  <li><a href='#'>Payment</a></li>
+                  <li><a href='javascript:load("/images/speech.png");'>Speech</a> </li>
+                  <li><a href='#'>Call Control</a></li>
+                  <li><a href='#'>Device Capabilities</a></li>
+                  <li><a href='#'>MIM</a></li>
+                  <li><a href='#'>MOBO</a> </li>
+              </ul>
+          </li>
+          <li><a href='javascript:load("/images/tutorials.png");'>Tutorials</a>
+              <ul>
+                  <li><a href='javascript:load("/images/tutorials-rest.png");'>REST API</a>
+                        <ul>
+                            <li><a href='javascript:load("/images/tutorials-rest-send.png");'>Send Messages</a></li>
+                            <li><a href='javascript:load("/images/tutorials-rest-speech.png");'>Speech to Text</a></li>
+                            <li><a href='#'>Locate a Device</a></li>
+                            <li><a href='#'>Charge to Bill</a></li>
+                            <li><a href='#'>Start Call Session</a></li>
+                            <li><a href='#'>Get Advertisement</a></li>
+                        </ul>
+                  </li>
+                  <li><a href='#'>HTML5 SDK</a>
+                        <ul>
+                            <li><a href='javascript:load("/images/tutorials-html5-send.png");'>Send Messages</a></li>
+                            <li><a href='#'>Speech to Text</a></li>
+                            <li><a href='#'>Locate a Device</a></li>
+                            <li><a href='#'>Charge to Bill</a></li>
+                            <li><a href='#'>Start Call Session</a></li>
+                            <li><a href='#'>Get Advertisement</a></li>
+                        </ul>
+                  </li>
+                  <li><a href='#'>Microsoft Server SDK</a></li>
+                  <li><a href='#'>Native iOS Speech SDK</a>
+                        <ul>
+                            <li><a href='#'>Speech to Text</a></li>
+                        </ul>
+                  </li>
+                  <li><a href='#'>Native Android Speech SDK</a></li>
+            </ul>
+          </li>
+          <li><a href='javascript:load("/images/apps.png");'>Sample Apps</a>
+                <ul>
+                    <li><a href='#'>SMS Messaging App</a>
+                        <ul>
+                            <li><a href='#'>RESTful</a></li>
+                            <li><a href='#'>HTML5 SDK</a></li>
+                            <li><a href='#'>Microsoft Server SDK</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='javascript:load("/images/apps-speech.png");'>Speech to Text App</a>
+                        <ul>
+                            <li><a href='javascript:load("/images/apps-speech-rest.png");'>RESTful</a></li>
+                            <li><a href='#'>HTML5 SDK</a></li>
+                            <li><a href='#'>Microsoft Server SDK</a></li>
+                            <li><a href='#'>Native iOS Speech SDK</a></li>
+                            <li><a href='#'>Native Android Spech SDK</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='#'>Locate App</a></li>
+                    <li><a href='#'>Payment App</a></li>
+                    <li><a href='#'>Call Control App</a></li>
+                    <li><a href='#'>Advertising App</a></li>
+                </ul>
+          </li>
+          <li><a href='javascript:load("/images/console.png");'>Console</a></li>
+          <li><a class="section-contains-xml" href='javascript:load("/images/docs.png");'>Docs</a>
+              <ul>
+                  <li><a class="section-contains-xml" href='javascript:load("/images/docs.png");'>APIs</a>
+                  <ul>
+                      <li><a class="section-contains-xml" href='#'>SMS</a>
+                            <ul>
+                                <li><a class="xml" href='#'>REST API</a>
+                                    <ul>
+                                        <li><a class="xml" href='#'>Overview</a></li>
+                                        <li><a class="xml" href='#'>Methods & Callbacks</a>
+                                            <ul>
+                                                <li><a class="xml" href='#'>Send SMS</a></li>
+                                                <li><a class="xml" href='#'>Get SMS Delivery Status</a></li>
+                                                <li><a class="xml" href='#'>Get SMS</a></li>
+                                                <li><a class="xml" href='#'>Receive SMS</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a class="code-generated" href='#'>HTML5 SDK</a></li>
+                                <li><a class="code-generated" href='#'>Microsoft Server SDK</a></li>
+                            </ul>
+                      </li>
+                      <li><a class="section-contains-xml" href='#'>MMS</a></li>
+                      <li><a class="section-contains-xml" href='#'>WAP Push</a></li>
+                      <li><a class="section-contains-xml" href='#'>Location</a></li>
+                      <li><a class="section-contains-xml" href='#'>Payment</a></li>
+                      <li><a class="section-contains-xml" href='#'>Advertising</a></li>
+                      <li><a class="section-contains-xml" href='javascript:load("/images/docs-speech.png");'>Speech</a>
+                            <ul>
+                                <li><a class="xml" href='javascript:load("/images/docs-speech-rest.png");'>REST API</a>
+                                    <ul>
+                                        <li><a class="xml" href='javascript:load("/images/docs-speech-rest.png");'>Overview</a></li>
+                                        <li><a class="xml" href='javascript:load("/images/docs-speech-rest-methods.png");'>Methods & Callbacks</a>
+                                            <ul>
+                                                <li><a class="xml" href='javascript:load("/images/docs-speech-rest-method.png");'>Speech to Text</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="xml" href='#'>Voices</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="code-generated" href='#'>HTML5 SDK</a></li>
+                                <li><a class="code-generated" href='#'>Microsoft Server SDK</a></li>
+                                <li><a href='#'>Native iOS Speech SDK</a></li>
+                                <li><a href='#'>Native Android Speech SDK</a></li>
+                            </ul>
+                      </li>
+                      <li><a class="section-contains-xml" href='#'>Call Control</a></li>
+                      <li><a class="section-contains-xml" href='#'>Device Capabilities</a></li>
+                      <li><a class="section-contains-xml" href='#'>MIM</a></li>
+                      <li><a class="section-contains-xml" href='#'>MOBO</a></li>
+                  </ul>
+                </li>
+                <li><a href='javascript:load("/images/docs-sdks.png");'>SDKs</a></li>
+                <li><a href='javascript:load("/images/docs-faqs.png");'>FAQs</a></li>
+                <li><a class="xml" href='javascript:load("/images/docs-errors.png");'>Error Codes</a>
+                    <ul>
+                          <li><a class="xml" href='javascript:load("/images/docs-errors-policy.png");'>POL00001</a></li>
+                          <li><a class="xml" href='#'>POL00002</a></li>
+                          <li><a class="xml" href='#'>POL00003</a></li>
+                          <li><a class="xml" href='#'>POL00004</a></li>
+                          <li><a class="xml" href='javascript:load("/images/docs-errors-service.png");'>SVC00003</a></li>
+                          <li><a class="xml" href='#'>SVC00004</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </li>
+          <li><a href='javascript:load("/images/access.png");'>My Full API Access </a></li>
+        </ul>
+        </td>
+        <td>
+        
+        <!-- This is the screenshot image on the right -->
+        <img src="/images/flow.png" id="screenshot" width="100%" />
+        
+        </td>
+        </tr>
+        </table>
+    </div>
+</body>
+</html>
